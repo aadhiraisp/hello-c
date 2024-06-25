@@ -1,18 +1,27 @@
 #include <stdio.h>
+#include <stdbool.h>
+
+bool addQuestion(int qno, int a, int b) {
+    printf( " %d . addition of %d and %d :", qno, a, b);
+    int input ;
+    scanf("%d" , &input );
+    if(input == a + b){
+        return true;
+    } else{
+        return false;
+    }
+}
 
 int main() {
     int score = 0;
-    printf( " 1 . addition of 56 and 68 :" );
-    int a ;
-    scanf("%d" , &a );
-    if(a==124){
+    bool result;
+    result = addQuestion(1, 56, 68);
+    if(result == true){
         score = score + 1;
     }
-    else{
-        score = score ;
-    }
     printf( " 2 . subraction of 14 and 14 : ");
-    int b ;
+    int b;
+    printf("value of b: '%d'", b);
     scanf("%d" , &b );
     if( b==0){
         score = score + 1;
@@ -47,16 +56,11 @@ int main() {
     else{
         score = score ;
     }
-    printf( " 6 . sum of 45 and 54 : ");
-    int f ;
-    scanf("%d" , &f );
-    if(f==45+54){
+    result = addQuestion(6, 45, 54);
+    if(result == true){
         score = score + 1;
     }
-    else{
-        score = score ;
-    }
-    printf( " 7 . devision of 632 and 2 : ");
+    printf( " 7 . division of 632 and 2 : ");
     int g ;
     scanf("%d" , &g );
     if(g==632/2){
@@ -83,14 +87,10 @@ int main() {
     else{
         score = score ;
     }
-    printf( " 10 . sum of 65 and 35 : ");
-    int j ;
-    scanf("%d" , &j );
-    if( j==65 + 35){
+
+    result = addQuestion(10, 65, 35);
+    if(result){
         score = score + 1;
-    }
-    else{
-        score = score ;
     }
     printf(" your score is : %d\n ",score);
 
